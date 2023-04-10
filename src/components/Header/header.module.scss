@@ -1,0 +1,12 @@
+h1 {
+  position: center;
+  margin-bottom: 20px;
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+
+  // responsive design
+  @media screen and (max-width: 768px) {
+    font-size: 1.5rem;
+  }
+}

@@ -38,7 +38,7 @@ const SearchInput = () => {
         <BiSearch size={23} onClick={handleSearch} />
         <input
           type="text"
-          placeholder="Search for a city"
+          placeholder="All around the world"
           value={input}
           onChange={(e) => setInput(e.target.value)}
           onKeyDown={handleKeyDown}

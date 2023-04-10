@@ -1,6 +1,6 @@
 .week {
   min-width: calc(100%-300px);
-  margin-top: 50px;
+  margin-top: 40px;
   height: 200px;
   background-color: rgba(0, 0, 0, 0.207);
   backdrop-filter: blur(100);
@@ -13,7 +13,7 @@
   place-items: center;
   flex-wrap: nowrap;
   overflow-x: auto;
-  padding: 0 3rem;
+  padding: 0 54px;
   gap: 24px;
   user-select: none;
   border-radius: 20px;
