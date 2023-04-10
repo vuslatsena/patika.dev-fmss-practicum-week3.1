@@ -1,6 +1,6 @@
 #  Week 3 Homework 3.1
 
-Patika.dev &amp; FMSS Bilişim Front-end Practicum Week3 - Homework 3.1. This is Weather App project using Context API Assignment with Weather API
+Patika.dev &amp; FMSS Bilişim Front-end Practicum Week3 - Homework 3.1. This is Weather App project using Context API Assignment with Weather API.
 ## Installation
 1. Clone the repository
 2. `npm install` command to install dependencies
@@ -13,4 +13,4 @@ application in the browser.
 https://app.patika.dev/courses/react/odev3
 
 ## Result
-![](src/assets/ss.png)
+![ss](src/assets/ss.png)
