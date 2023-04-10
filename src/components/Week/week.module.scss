@@ -1,0 +1,62 @@
+.week {
+  min-width: calc(100%-40px);
+  margin-top: 50px;
+  height: 200px;
+  background-color: rgba(51, 48, 48, 0.671);
+  backdrop-filter: blur(5px);
+  border: 2px solid var(--tr-white-2);
+  box-shadow: 0 1.8em 3.7em var(--shadow);
+  align-self: center;
+  border-left: none;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  place-items: center;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  padding: 0 2rem;
+  gap: 1.5rem;
+  user-select: none;
+  border-radius: 20px;
+
+
+  &::-webkit-scrollbar {
+    background-color: transparent;
+    width: 0.5rem;
+    height: 0.7rem;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--tr-white-2);
+
+    border-radius: 1rem;
+  }
+
+  .day {
+    padding: 0.2rem;
+    width: 100px;
+    height: 150px;
+    background-color: var(--tr-white-2);
+    backdrop-filter: blur(5px);
+    border: 2px solid var(--tr-white-2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: rgba(243, 236, 236, 0.685);
+    cursor: pointer;
+    p {
+      margin-top: 1rem;
+    }
+  }
+}
+
+.active {
+  background-color: #f5ececee !important;
+  color: rgb(78, 75, 75) !important;
+}
+
+@media (max-width: 576px) {
+  .week {
+    width:100%;
+  }
+}

@@ -1,0 +1,62 @@
+.activeCard {
+  width: 285px;
+  height: 320px;
+  background-color: var(--tr-white-2);
+  backdrop-filter: blur(5px);
+  border: 2px solid var(--tr-white-2);
+  box-shadow: 0 1.8em 3.7em var(--shadow);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 1.2rem;
+  flex-shrink: 0;
+  user-select: none;
+  border-radius: 20px;
+
+  h3 {
+    letter-spacing: 2px;
+    font-size: 1.3rem;
+    color: #fff;
+  }
+
+  .info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    p {
+      font-size: 0.8rem;
+      color: rgba(243, 236, 236, 0.685);
+      text-transform: uppercase;
+    }
+  }
+
+  h1 {
+    font-size: 2.8rem;
+    color: #fff;
+  }
+
+  .minmax {
+    display: flex;
+    margin-top: 1rem;
+    font-size: 0.8rem;
+    color: rgba(243, 236, 236, 0.685);
+
+    .min {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      padding: 0 1rem;
+      border-right: solid 3px var(--tr-white-2);
+    }
+
+    .max {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      padding: 0 1rem;
+    }
+  }
+}
