@@ -13,4 +13,4 @@ application in the browser.
 https://app.patika.dev/courses/react/odev3
 
 ## Result
-
+![](src/assets/ss.png)

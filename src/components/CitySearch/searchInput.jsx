@@ -1,13 +1,17 @@
+// Import necessary modules
 import { BiSearch } from "react-icons/bi";
 import cities from "../../data/citiesofturkey.json";
 import { useWeatherContext } from '../../context/WeatherContext';
 import { useState } from 'react';
 import style from './searchInput.module.scss';
 
-const Inputs = () => {
+// Define component
+const SearchInput = () => {
+  // Define state variables
   const [input, setInput] = useState("");
   const { city, setCity } = useWeatherContext();
 
+  // Define event handlers
   const handleSearch = () => {
     if (input.trim() === "") {
       alert("Please select a city");
@@ -27,13 +31,14 @@ const Inputs = () => {
     setCity(e.target.value);
   };
 
+  // Render component
   return (
-    <div className={style.inputs}>
+    <div className={style.searchInput}>
       <div className={style.inputBox}>
         <BiSearch size={23} onClick={handleSearch} />
         <input
           type="text"
-          placeholder="All around the world"
+          placeholder="Search for a city"
           value={input}
           onChange={(e) => setInput(e.target.value)}
           onKeyDown={handleKeyDown}
@@ -41,10 +46,9 @@ const Inputs = () => {
       </div>
       <br />
       <select value={city} onChange={handleSelect} name="select">
-        <option value="">Select a city</option>
-        {cities.map(({ id, name }) => (
-          <option key={id} value={name}>
-            {name}
+        {cities.map((city) => (
+          <option key={city.id} value={city.name}>
+            {city.name}
           </option>
         ))}
       </select>
@@ -52,4 +56,5 @@ const Inputs = () => {
   );
 };
 
-export default Inputs;
+// Export component
+export default SearchInput;

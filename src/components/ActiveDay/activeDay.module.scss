@@ -1,62 +1,68 @@
-.activeCard {
+.activeDayCard {
+  /* Box dimensions and appearance */
   width: 285px;
   height: 320px;
-  background-color: var(--tr-white-2);
+  background-color: rgba(255, 255, 255, 0.159);
   backdrop-filter: blur(20px);
-  border: 2px solid var(--tr-white-2);
-  box-shadow: 0 1.8em 3.7em var(--shadow);
+  border: 2px solid rgba(255, 255, 255, 0.159);
+  box-shadow: 0 30px 60px rgba(3, 46, 87, 0.2);
+  border-radius: 20px;
+  
+  /* Flex container properties */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  text-align: center;
-  gap: 1.2rem;
+  gap: 20px;
   flex-shrink: 0;
   user-select: none;
-  border-radius: 20px;
 
+  /* Heading styles */
   h3 {
+    font-size: 24px;
     letter-spacing: 2px;
-    font-size: 1.3rem;
     color: #fff;
   }
 
+  /* Info section styles */
   .info {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
 
     p {
-      font-size: 0.8rem;
-      color: rgba(243, 236, 236, 0.685);
+      font-size: 14px;
       text-transform: uppercase;
+      color: rgba(243, 236, 236, 0.817);
     }
   }
 
+  /* Main heading style */
   h1 {
-    font-size: 2.8rem;
+    font-size: 44px;
     color: #fff;
   }
 
+  /* Min/max temperature styles */
   .minmax {
     display: flex;
-    margin-top: 1rem;
-    font-size: 0.8rem;
-    color: rgba(243, 236, 236, 0.685);
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.434);
 
+    /* Left column styles */
     .min {
       display: flex;
       flex-direction: column;
-      gap: 0.5rem;
-      padding: 0 1rem;
-      border-right: solid 3px var(--tr-white-2);
+      gap: 8px;
+      padding: 0 16px;
+      border-right: solid 2px rgba(255, 255, 255, 0.159);
     }
 
+    /* Right column styles */
     .max {
       display: flex;
       flex-direction: column;
-      gap: 0.5rem;
-      padding: 0 1rem;
+      gap: 8px;
+      padding: 0 16px;
     }
   }
 }

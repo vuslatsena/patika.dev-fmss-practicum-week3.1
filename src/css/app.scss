@@ -1,23 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
-:root {
-  --off-white: #e5e5e5;
-  --tr-white-1: rgba(0, 0, 0, 0.25);
-  --tr-white-2: rgba(0, 0, 0, 0.1);
-  --blue-1: #62b8f5;
-  --blue-2: #4475ef;
-  --shadow: rgba(3, 46, 87, 0.2);
-}
-
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&display=swap');
 
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Nunito Sans', sans-serif;
 }
 
-#root {}
-
 .container {
-  background: linear-gradient(rgba(0, 0, 0, 0.5), #ffffff25), url(../assets//background.jpg);
+  background: linear-gradient(rgba(0, 0, 0, 0.1), #ffffff25), url(../assets//background2.gif);
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;
@@ -29,23 +18,20 @@ body {
 }
 
 .box {
-  margin-top: 3rem;
-  width: 86%;
+  margin-top: 54px;
+  width: 85%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-
 @media (max-width: 576px) {
   .container {
     height: auto;
-    padding: 2rem;
-
+    padding: 36px;
     .box {
-      gap: 2rem;
+      gap: 36px;
       flex-direction: column;
-
     }
   }
 }

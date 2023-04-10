@@ -1,10 +1,10 @@
-.inputs {
+.searchInput {
   display: flex;
   justify-content: center;
-  gap: 48px; /* 3rem x 16px/rem = 48px */
+  gap: 48px; 
 
   .inputBox {
-    width: 350px;
+    width: 300px;
     position: relative;
     display: flex;
     align-items: center;
@@ -12,47 +12,50 @@
 
     input[type="text"] {
       width: 100%;
-      padding: 13px; /* 0.8rem x 16px/rem = 12.8px => rounded up to 13px */
-      border-radius: 10px; /* 0.6rem x 16px/rem = 9.6px => rounded up to 10px */
+      padding: 14px; 
+      border-radius: 10px; 
       background-color: rgba(5, 5, 15, 0.670);
-      border: 2px solid var(--tr-white-2);
-      font-size: 18px; /* 1.1rem x 16px/rem = 17.6px => rounded up to 18px */
+      border: 2px solid rgba(0, 0, 0, 0.1);
+      font-size: 18px;
       color: white;
       user-select: none;
       &:focus {
         outline: none;
       }
     }
-
     svg {
       color: white;
       position: absolute;
       right: 20px;
       cursor: pointer;
-      padding: 16px 0 16px 16px; /* 1rem x 16px/rem = 16px */
+      padding: 16px 0 16px 16px; 
       -webkit-tap-highlight-color: transparent;
     }
   }
-
   select,
   option {
-    width: 250px;
-    padding: 13px;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 180px;
+    padding: 14px;
     font-size: 18px; 
     border-radius: 10px; 
     background-color: rgba(5, 5, 15, 0.670);
-    border: 2px solid var(--tr-white-2);
+    border: 2px solid rgba(0, 0, 0, 0.1);
     cursor: pointer;
     color: rgba(243, 236, 236, 0.685);
     -webkit-tap-highlight-color: transparent;
+    &:focus {
+      outline: none;
+    }
   }
 }
 
 @media (max-width: 576px) {
   .inputs {
     flex-direction: column;
-    gap: 16px; /* 1rem x 16px/rem = 16px */
-
+    gap: 6px; 
     .inputBox {
       width: 250px !important;
     }

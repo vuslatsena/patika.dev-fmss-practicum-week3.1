@@ -11,7 +11,7 @@ function App() {
   return (
     <WeatherProvider>
       <div className="container">
-        <SearchInput />
+      <SearchInput />
         <div className="box">
           <ActiveDay /> 
         </div>
