@@ -1,21 +1,19 @@
-import "./css/reset.css"
-import "./css/app.scss"
+
 import ActiveDay from "./components/ActiveDay";
 import Week from "./components/Week"
-import Inputs from "./components/Inputs";
+import SearchInput from "./components/CitySearch/searchInput";
 import WeatherProvider from "./context/WeatherContext";
 
-
+import "./css/index.css"
+import "./css/app.scss"
 
 function App() {
-
-
   return (
     <WeatherProvider>
       <div className="container">
-        <Inputs />
+        <SearchInput />
         <div className="box">
-              <ActiveDay /> 
+          <ActiveDay /> 
         </div>
         <Week />
       </div>

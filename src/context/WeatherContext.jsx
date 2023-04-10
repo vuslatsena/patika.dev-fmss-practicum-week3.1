@@ -1,53 +1,26 @@
+// Importing the necessary dependencies
 import axios from 'axios';
-import React, { createContext, useContext, useEffect, useState } from 'react'
+import React, { createContext, useContext, useEffect, useState } from 'react';
 
-import cities from "../data/citiesofturkey.json"
-import days from "../data/weekofdays.js"
+// Importing the city and day data
+import cities from '../data/citiesofturkey.json';
+import days from '../data/weekofdays.js';
 
-const WeatherContext = createContext()
+// Creating the WeatherContext
+const WeatherContext = createContext();
 
-export const useWeatherContext = () => useContext(WeatherContext)
+// Creating a custom hook to access the WeatherContext
+export const useWeatherContext = () => useContext(WeatherContext);
 
+// Defining the WeatherProvider component
 const WeatherProvider = ({ children }) => {
-  const [weather, setWeather] = useState({})
-  const [activeDay, setActiveDay] = useState(0)
-  const [city, setCity] = useState("İstanbul")
-  const [error, setError] = useState(false)
-  const [location, setLocation] = useState(true)
-
-  useEffect(() => {
-    const getWeather = async () => {
-      try {
-        const { data } = await axios.get(`https://api.weatherapi.com/v1/forecast.json?key=1fd50f7748d54336936194552230604&q=${city}&days=7&aqi=no&alerts=no`)
-        setWeather(data)
-        setError(false)
-      } catch (error) {
-        setError(error.response)
-        console.log(error.response)
-      }
-    }
-
-    getWeather()
-  }, [city])
-
-  useEffect(() => {
-    if (navigator.geolocation) {
-      location && navigator.geolocation.getCurrentPosition((position) => {
-        const latitude = Math.round(position.coords.latitude)
-        const longitude = Math.round(position.coords.longitude)
-
-        cities.forEach(item => {
-          if (Math.round(item.latitude) === latitude && Math.round(item.longitude) === longitude) {
-            setCity(item.name)
-            setLocation(false)
-          }
-        })
-      });
-    } else {
-      console.log("Your browser does not support location information.")
-    }
-  }, [location])
-
+  // Defining the state variables
+  const [weather, setWeather] = useState({});
+  const [activeDay, setActiveDay] = useState(0);
+  const [city, setCity] = useState('İstanbul');
+  const [error, setError] = useState(false);
+  const [location, setLocation] = useState(true);
+  const today = days[new Date().getDay()];
   const values = {
     weather,
     days,
@@ -56,14 +29,49 @@ const WeatherProvider = ({ children }) => {
     error,
     setActiveDay,
     setCity,
-    today: days[new Date().getDay()]
-  }
+    today,
+  };
+
+  // Fetching the weather data based on the selected city
+  useEffect(() => {
+    const fetchWeather = async () => {
+      try {
+        const { data } = await axios.get(`https://api.weatherapi.com/v1/forecast.json?key=1fd50f7748d54336936194552230604&q=${city}&days=7&aqi=no&alerts=no`);
+        setWeather(data);
+        setError(false);
+      } catch (error) {
+        setError(error.response);
+        console.error(error.response);
+      }
+    };
+    fetchWeather();
+  }, [city]);
+
+  // Getting the user's location using the geolocation API
+  useEffect(() => {
+    const getLocation = () => {
+      if (navigator.geolocation?.getCurrentPosition) {
+        navigator.geolocation.getCurrentPosition(({ coords: { latitude, longitude } }) => {
+          const matchingCity = cities.find((city) => city.latitude === latitude && city.longitude === longitude);
+          if (matchingCity) {
+            setCity(matchingCity.name);
+            setLocation(false);
+          }
+        });
+      } else {
+        console.log('Your browser does not support location information.');
+      }
+    };
+    if (location) {
+      getLocation();
+    }
+  }, [location]);
 
   return (
     <WeatherContext.Provider value={values}>
       {children}
     </WeatherContext.Provider>
-  )
-}
+  );
+};
 
-export default WeatherProvider
+export default WeatherProvider;

@@ -1,7 +1,7 @@
 .inputs {
   display: flex;
   justify-content: center;
-  gap: 3rem;
+  gap: 48px; /* 3rem x 16px/rem = 48px */
 
   .inputBox {
     width: 350px;
@@ -12,11 +12,11 @@
 
     input[type="text"] {
       width: 100%;
-      padding: 0.8rem;
-      border-radius: 0.6rem;
-      background-color: rgba(51, 48, 48, 0.671);
+      padding: 13px; /* 0.8rem x 16px/rem = 12.8px => rounded up to 13px */
+      border-radius: 10px; /* 0.6rem x 16px/rem = 9.6px => rounded up to 10px */
+      background-color: rgba(5, 5, 15, 0.670);
       border: 2px solid var(--tr-white-2);
-      font-size: 1.1rem;
+      font-size: 18px; /* 1.1rem x 16px/rem = 17.6px => rounded up to 18px */
       color: white;
       user-select: none;
       &:focus {
@@ -29,7 +29,7 @@
       position: absolute;
       right: 20px;
       cursor: pointer;
-      padding: 1rem 0 1rem 1rem;
+      padding: 16px 0 16px 16px; /* 1rem x 16px/rem = 16px */
       -webkit-tap-highlight-color: transparent;
     }
   }
@@ -37,23 +37,21 @@
   select,
   option {
     width: 250px;
-    padding: 0.8rem;
-    font-size: 1.1rem;
-    border-radius: 0.6rem;
-    background-color: rgba(51, 48, 48, 0.671);
+    padding: 13px;
+    font-size: 18px; 
+    border-radius: 10px; 
+    background-color: rgba(5, 5, 15, 0.670);
     border: 2px solid var(--tr-white-2);
-    font-size: 1.2rem;
     cursor: pointer;
     color: rgba(243, 236, 236, 0.685);
     -webkit-tap-highlight-color: transparent;
-
   }
 }
 
 @media (max-width: 576px) {
   .inputs {
     flex-direction: column;
-    gap: 1rem;
+    gap: 16px; /* 1rem x 16px/rem = 16px */
 
     .inputBox {
       width: 250px !important;

@@ -1,11 +1,12 @@
 .error {
-    background-color: rgba(51, 48, 48, 0.671);
+    background-color: rgba(5, 5, 15, 0.670);
     backdrop-filter: blur(5px);
-    border: 2px solid var(--tr-white-2);
-    box-shadow: 0 1.8em 3.7em var(--shadow);
+    border: 2px solid #ffffff;
+    box-shadow: 0 27.2px 56.3px rgba(0, 0, 0, 0.25);
     text-align: center;
     color: red;
-    font-size: 1.1rem;
+    font-size: 18px;
     font-weight: 600;
-    padding: 3rem;
-}
+    padding: 48px;
+  }
+  
